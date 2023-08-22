@@ -7,6 +7,8 @@ import ru.joor.workers.mapper.EmployeeMapper;
 import ru.joor.workers.model.entity.EmployeeEntity;
 import ru.joor.workers.model.repository.EmployeeRepository;
 
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class EmployeeService {
@@ -21,7 +23,7 @@ public class EmployeeService {
     }
 
     public EmployeeDto getEmployeeById(String id) {
-        EmployeeEntity employeeEntity = employeeRepository.getById(id);
+        EmployeeEntity employeeEntity = employeeRepository.getById(UUID.fromString(id));
         return employeeMapper.employeeEntityToEmployeeDto(employeeEntity);
     }
 }

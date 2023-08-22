@@ -1,6 +1,7 @@
 package ru.joor.workers.model.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +15,8 @@ import java.util.UUID;
 public class EmployeeEntity {
 
     @Id
-    @Column(name = "id")
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    @Column(name = "id", length = 36)
     private UUID id;
 
     @Column(name = "full_name")

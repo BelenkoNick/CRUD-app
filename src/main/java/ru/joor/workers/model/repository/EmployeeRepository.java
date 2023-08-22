@@ -10,5 +10,5 @@ import java.util.UUID;
 @Repository
 public interface EmployeeRepository extends JpaRepository<EmployeeEntity, UUID>, JpaSpecificationExecutor<EmployeeEntity> {
 
-    EmployeeEntity getById(String id);
+    EmployeeEntity getById(UUID id);
 }
